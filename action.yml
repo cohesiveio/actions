@@ -1,0 +1,20 @@
+name: "Cohesive Deploy"
+description: "Deploys optimized sites for optimized cloud hosting"
+
+inputs:
+  root:
+    description: "Relative path under $GITHUB_WORKSPACE to place the repository"
+    required: false
+  storage:
+    description: "Storage format type S3, GCS"
+    required: false
+  bucket:
+    description: "S3/GCS bucket to upload assets to"
+    required: true
+  prefix:
+    description: "The prefix to add to uploaded resources"
+    required: false
+
+runs:
+  using: "node16"
+  main: "lib/index.js"
